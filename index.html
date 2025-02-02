@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lokasi Penjemputan</title>
+    <link rel="stylesheet" href="style.css">  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        /* Basic styling for the map container and info divs */
+        #map {
+            height: 400px; /* Adjust as needed */
+            width: 100%;
+        }
+        #info-container {
+            margin-top: 10px;
+        }
+        .container {
+            display: flex;
+            flex-direction: column; /* Arrange elements vertically */
+            align-items: center; /* Center horizontally */
+            width: 80%; /* Adjust as needed */
+            margin: 20px auto; /* Center the container */
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        #controls {
+            display: flex;
+            gap: 10px; /* Space between buttons */
+            margin-bottom: 10px;
+        }
+        #info, #manual-info, #distance-info {
+            margin-bottom: 5px; /* Space between info lines */
+        }
+        /* Style for the arrow buttons */
+        .arrow-buttons {
+            display: flex;
+            gap: 5px; /* Space between arrow buttons */
+            margin-top: 10px;
+        }
+        .arrow-buttons button {
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lokasi Penjemputan</h1>
+        <div id="controls">
+            <button id="get-location">📍 Lokasi Saya</button>
+            <button id="add-marker">➕ Tambah Lokasi Penjemputan</button>
+        </div>
+        <div id="map"></div>
+        <div id="info-container">
+            <div id="info">Menunggu lokasi...</div>
+            <div id="manual-info">Klik peta untuk tambah lokasi penjemputan.</div>
+            <div id="distance-info"></div>
+        </div>
+        <div class="arrow-buttons">
+            <button id="panah-ke-atas">⬆️</button>
+            <div>
+                <button id="panah-ke-kiri">⬅️</button>
+                <button id="panah-ke-kanan">➡️</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script type="module" src="index.js"></script>
+</body>
+</html>
