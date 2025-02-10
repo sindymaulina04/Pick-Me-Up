@@ -2,54 +2,48 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    display: flex; /* Use flexbox for centering */
+    display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Ensure full viewport height */
+    min-height: 100vh;
     margin: 0;
-    padding: 20px; /* Add some padding */
+    padding: 20px;
+}
+.popup {
+    position: absolute;
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: none;
+    z-index: 1000;
+    transform: translate(-50%, -100%);
+    white-space: nowrap;
 }
 
 .container {
-    width: 90%; /* Control container width */
-    max-width: 800px; /* Set a maximum width */
+    width: 90%;
+    max-width: 800px;
     background-color: white;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 h1 {
     text-align: center;
     margin-bottom: 20px;
-    color: #333; /* Darker heading color */
+    color: #333;
 }
 
 #controls {
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin-bottom: 20px; /* Add spacing below buttons */
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Supaya tombol tidak terlalu panjang */
 }
-
-#map {
-    height: 400px; /* Adjust map height */
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* .ol-attribution {
-    display: none !important;
-}
-.ol-compass {
-    display: none !important;
-}
-.ol-compass {
-    display: none !important;
-} */
-
-
 
 button {
     padding: 12px 20px;
@@ -60,45 +54,65 @@ button {
     cursor: pointer;
     border-radius: 5px;
     transition: background 0.3s;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
     background-color: #0056b3;
 }
 
-#info-container {  /* Style the container for info sections */
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column; /* Stack info sections vertically */
-    gap: 10px; /* Add spacing between info sections */
-}
-
-#info, #distance-info, #manual-info {
-    background: #f9f9f9; /* Light background color */
-    padding: 12px;
-    border-radius: 5px;
+#map {
+    height: 400px;
+    width: 100%;
+    border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: left; /* Align text to the left */
 }
 
+#popup {
+    position: absolute;
+    background: white;
+    padding: 7px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: none;
+}
 
-
+/* Responsif untuk HP */
 @media screen and (max-width: 768px) {
     .container {
         width: 95%;
+        padding: 15px;
     }
 
     #controls {
-        flex-direction: column; /* Stack buttons vertically on smaller screens */
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
     }
 
     button {
-        width: 100%; /* Full width buttons on smaller screens */
-        margin-bottom: 10px;
+        width: 100%;
+        padding: 14px;
+        font-size: 18px;
+        margin-bottom: 5px;
     }
 
     #map {
-        height: 300px; /* Adjust map height for smaller screens */
+        height: 300px; /* Map lebih kecil di layar HP */
     }
+
+    h1 {
+        font-size: 20px; /* Ukuran judul lebih kecil */
+    }
+    .popup {
+        position: absolute;
+        background: white;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        display: none;
+        z-index: 1000;
+        transform: translate(-50%, -100%); /* Agar posisi popup di atas marker */
+    }
+    
 }
