@@ -73,9 +73,9 @@ document.addEventListener("DOMContentLoaded", function () {
                         data.address.village,   
                         data.address.town,      
                         data.address.city,      
-                        data.address.state,     
-                        data.address.postcode,  
-                        data.address.country    
+                        // data.address.state,     
+                        // data.address.postcode,  
+                        // data.address.country    
                     ].filter(Boolean);
                     address = addressParts.join(', ');
                 }

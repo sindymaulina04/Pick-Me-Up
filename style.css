@@ -5,11 +5,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 20vh;
     margin: 0;
     padding: 20px;
 }
-.popup {
+/* .popup {
     position: absolute;
     background: white;
     padding: 10px;
@@ -19,13 +19,23 @@ body {
     z-index: 1000;
     transform: translate(-50%, -100%);
     white-space: nowrap;
+} */
+
+#popup {
+    position: absolute;
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: none;
 }
+
 
 .container {
     width: 90%;
     max-width: 800px;
     background-color: white;
-    padding: 20px;
+    padding: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -48,7 +58,7 @@ h1 {
 button {
     padding: 12px 20px;
     font-size: 16px;
-    background-color: #007bff;
+    background-color: #793675;
     color: white;
     border: none;
     cursor: pointer;
@@ -58,7 +68,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #f500c0;
 }
 
 #map {
@@ -68,14 +78,7 @@ button:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-#popup {
-    position: absolute;
-    background: white;
-    padding: 7px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    display: none;
-}
+
 
 /* Responsif untuk HP */
 @media screen and (max-width: 768px) {
@@ -98,21 +101,26 @@ button:hover {
     }
 
     #map {
-        height: 300px; /* Map lebih kecil di layar HP */
+        height: 380px; /* Map lebih kecil di layar HP */
     }
 
     h1 {
         font-size: 20px; /* Ukuran judul lebih kecil */
     }
-    .popup {
+    #popup {
         position: absolute;
         background: white;
         padding: 10px;
         border-radius: 5px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         display: none;
-        z-index: 1000;
-        transform: translate(-50%, -100%); /* Agar posisi popup di atas marker */
+        transform: translate(-50%, -100%);
+        max-width: 1500px; /* Batasi lebar popup agar teks turun ke bawah */
+        word-wrap: break-word; /* Paksa teks turun ke bawah */
+        overflow-wrap: break-word; /* Alternatif untuk memecah kata */
+        white-space: nowrap;
     }
+    
+    
     
 }
